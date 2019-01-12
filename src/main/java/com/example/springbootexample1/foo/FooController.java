@@ -1,13 +1,15 @@
-package com.example.springbootexample1;
+package com.example.springbootexample1.foo;
 
+import com.example.springbootexample1.Person;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/foo")
 public class FooController implements ErrorController {
 
-    @RequestMapping("/")
+    @RequestMapping("")
     public String foo() {
         return "This is foo";
     }
@@ -29,6 +31,6 @@ public class FooController implements ErrorController {
 
     @RequestMapping("/error")
     public String handleError() {
-        return "Relax, take it ease";
+        return "Relax, take it ease - foo";
     }
 }
